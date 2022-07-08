@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "terraform-study-guide"
+version = "0.1.0"
+description = "Terraform Study Guide"
+authors = ["h4ndzdatm0ld <hugotinoco@icloud.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+Sphinx = "^5.0.2"
+sphinx-rtd-theme = "^1.0.0"
+myst-parser = "^0.18.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
