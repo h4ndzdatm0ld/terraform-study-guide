@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Objective 4: Use the Terraform CLI (outside of core workflow) &mdash; Terraform Study Guide 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Terraform Study Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../README.html">Readme</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Terraform Study Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Objective 4: Use the Terraform CLI (outside of core workflow)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/objectives/objective-4/terraform-cli.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="objective-4-use-the-terraform-cli-outside-of-core-workflow">
+<h1>Objective 4: Use the Terraform CLI (outside of core workflow)<a class="headerlink" href="#objective-4-use-the-terraform-cli-outside-of-core-workflow" title="Permalink to this heading"></a></h1>
+<details><summary>Given a scenario: choose when to use terraform fmt to format code</summary>
+<p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>terraform fmt
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>This command is used for rewriting Terraform configuration files to a canonical format and style.</p></li>
+<li><p>It applies the Terraform language style conventions along with other changes for readability.</p></li>
+<li><p>This insures consistency</p></li>
+<li><p>There might be changes with Terraform versions so it is recommended to run this command on modules after an upgrade.</p></li>
+</ul>
+</p>
+</details>
+<details><summary>Given a scenario: choose when to use terraform taint to taint Terraform resources</summary>
+<p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>terraform taint
+</pre></div>
+</div>
+<ul>
+<li><p>Marks a resource as tainted, forcing it to be destroyed and recreated on the next apply.</p></li>
+<li><p>It does not modify infrastructure but does modify the state file</p></li>
+<li><p>After a resource is marked the next plan shows it will be destroyed and recreated on the next apply</p></li>
+<li><p>Useful when we want a side effect of a recreation that is not visible in the attributes of the resource. For ex/rebooting the machine from a base image causing a new startup script to run.</p></li>
+<li><p>This command can affect resources that depend on the tainted resource. Ex/ DNS resource that uses IP of a server, that resource might need to be updated with the new IP of a tainted server.</p></li>
+<li><p>Examples:</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>   <span class="c1">#Tainting a Single Resource</span>
+   terraform taint aws_security_group.allow_all
+</pre></div>
+</div>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>   <span class="c1">#Tainting a single resource created with for_each</span>
+   terraform taint <span class="s1">&#39;module.route_tables.azurerm_route_table.rt[\&quot;DefaultSubnet\&quot;]&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>   <span class="c1">#Tainting a Resource within a Module</span>
+   terraform taint <span class="s2">&quot;module.couchbase.aws_instance.cb_node[9]&quot;</span>
+</pre></div>
+</div>
+</p>
+</li>
+</ul>
+</details>
+<details><summary>Given a scenario: choose when to use terraform import to import existing infrastructure into our Terraform state	</summary>
+<p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>terraform import
+</pre></div>
+</div>
+<ul>
+<li><p>Imports existing resources into Terraform</p></li>
+<li><p>Examples:</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>   <span class="c1">#Import into Resource</span>
+   <span class="c1">#import an AWS instance into the aws_instance resource named foo</span>
+   terraform import aws_instance.foo i-abcd1234
+</pre></div>
+</div>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>   <span class="c1">#Import into Module</span>
+   <span class="c1">#import an AWS instance into the asw_instance resource named bar into module named foo:</span>
+   terraform import module.foo.aws_instance.bar i-abcd1234
+</pre></div>
+</div>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>   <span class="c1">#Import into Resource configured with count</span>
+   <span class="c1">#import an AWS instance into the first instance of the aws_instance resource named baz configured with count:</span>
+   terraform import <span class="s1">&#39;aws_instance.baz[0]&#39;</span> i-abcd1234
+</pre></div>
+</div>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>   <span class="c1">#Import into Resource configured with for_each</span>
+   <span class="c1">#import an AWS instance into the example instance of the aws_instance resource named baz configured with for_each:</span>
+   terraform import <span class="s1">&#39;aws_instance.baz[&quot;example&quot;]&#39;</span> i-abcd1234   <span class="c1">#Linux, MacOs, Unix</span>
+   terraform import <span class="s1">&#39;aws_instance.baz[\&quot;example\&quot;]&#39;</span> i-abcd1234 <span class="c1">#PowerShell</span>
+   terraform import aws_instance.baz<span class="o">[</span><span class="se">\&quot;</span>example<span class="se">\&quot;</span><span class="o">]</span> i-abcd1234   <span class="c1">#Windows</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</p>
+</details>
+<details><summary>Given a scenario: choose when to use terraform workspace to create workspaces</summary>
+<p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>terraform workspace
+terraform workspace <span class="k">select</span>
+terraform workspace new
+</pre></div>
+</div>
+<ul>
+<li><p>Terraform configuration has a backend that defines operations and where persistent data is stored (<a class="reference external" href="https://www.terraform.io/docs/state/purpose.html">state</a>)</p></li>
+<li><p>Persistent data in the backend belongs to a workspace.</p></li>
+<li><p>Creating different workspaces is useful to manage different stages of deployment (sandbox or production)</p></li>
+<li><p>At first the backend only has one workspace ‘default’. This workspace cannot be deleted.</p></li>
+<li><p>Certain backends can support multiple named workspaces. This allows multiple states to be associated with a single configuration.</p></li>
+<li><p>Config still only has one backend with more than one instance of that config</p></li>
+<li><p>Backends that support multiple workspaces:</p>
+<ul class="simple">
+<li><p>AzureRM</p></li>
+<li><p>Consul</p></li>
+<li><p>COS</p></li>
+<li><p>GCS</p></li>
+<li><p>Local</p></li>
+<li><p>Manta</p></li>
+<li><p>Postgres</p></li>
+<li><p>Remote</p></li>
+<li><p>S3</p></li>
+</ul>
+</li>
+<li><p>Examples:</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>  <span class="c1">#Creating a workspace</span>
+ terraform workspace new bar
+ <span class="c1">#Created and switched to workspace &quot;bar&quot;!</span>
+
+ <span class="c1">#We&#39;re now on a new, empty workspace. Workspaces isolate their state,</span>
+ <span class="c1">#so if we run &quot;terraform plan&quot; Terraform will not see any existing state</span>
+ <span class="c1">#for this configuration.</span>
+</pre></div>
+</div>
+</p>
+</li>
+</ul>
+</details>
+<details><summary>Given a scenario: choose when to use terraform state to view Terraform state</summary>
+<p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>terraform state
+</pre></div>
+</div>
+<ul>
+<li><p>Used for advanced state management</p></li>
+<li><p>Used instead of changing state directly</p></li>
+<li><p>this is a nested subcommand (has more subcommands)</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.terraform.io/docs/commands/state/addressing.html">Resource Addressing</a></p></li>
+<li><p><a class="reference external" href="https://www.terraform.io/docs/commands/state/list.html">list</a></p></li>
+<li><p><a class="reference external" href="https://www.terraform.io/docs/commands/state/mv.html">mv</a></p></li>
+<li><p><a class="reference external" href="https://www.terraform.io/docs/commands/state/pull.html">pull</a></p></li>
+<li><p><a class="reference external" href="https://www.terraform.io/docs/commands/state/push.html">push</a></p></li>
+<li><p><a class="reference external" href="https://www.terraform.io/docs/commands/state/rm.html">rm</a></p></li>
+<li><p><a class="reference external" href="https://www.terraform.io/docs/commands/state/show.html">show</a></p></li>
+</ul>
+</p>
+</li>
+</ul>
+</details>
+<details><summary>Given a scenario: choose when to enable verbose logging and what the outcome/value is	</summary>
+<p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>TF_LOG
+<span class="c1">#LOG LEVELS</span>
+TRACE
+DEBUG
+INFO
+WARN
+ERROR
+TF_LOG_PATH <span class="c1">#Persist logged output</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Trace is the most verbose and it is the default</p></li>
+<li><p>If Terraform crashes a Crash log is saved with the debug logs with panic message and backtrace</p></li>
+</ul>
+</p>
+</details>
+<hr class="docutils" />
+<p><span class="xref myst">⏮️</span> Objective 3   ||   Objective 5 <span class="xref myst">⏩</span></p>
+<p><a class="reference internal" href="../../README.html"><span class="doc std std-doc">🔙</span></a> README</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Hugo Tinoco.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

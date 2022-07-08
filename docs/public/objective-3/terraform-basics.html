@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Objective 3: Understand Terraform basics &mdash; Terraform Study Guide 0.1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Terraform Study Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Readme</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Terraform Study Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Objective 3: Understand Terraform basics</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/objective-3/terraform-basics.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="objective-3-understand-terraform-basics">
+<h1>Objective 3: Understand Terraform basics<a class="headerlink" href="#objective-3-understand-terraform-basics" title="Permalink to this heading"></a></h1>
+<details><summary>	Handle Terraform and provider installation and versioning</summary>
+<p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://learn.hashicorp.com/terraform?track=getting-started#getting-started">HashiCorp Terraform Tutorial</a></p></li>
+<li><p>This tutorial goes through the process of installing Terraform and provider installation and versioning</p></li>
+</ul>
+</p>
+<hr class="docutils" />
+<details><summary>Providers</summary>
+<ul>
+<li><p>The primary construct of the Terraform language are <code class="docutils literal notranslate"><span class="pre">resources</span></code>, the <code class="docutils literal notranslate"><span class="pre">behaviors</span></code> of resources rely on the resource <code class="docutils literal notranslate"><span class="pre">types</span></code>, resource types are defined by <code class="docutils literal notranslate"><span class="pre">providers</span></code>.</p></li>
+<li><p>Providers have a set of resource types that defines which arguments are accepted, what attributes it exports, and how changes are applied to APIs.</p></li>
+<li><p>Providers require their own configuration for regions, authentication etc.</p></li>
+<li><p><strong>Configuration</strong></p>
+<ul>
+<li><p>providers are configured with a provider block:</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>    provider <span class="s2">&quot;google&quot;</span> <span class="o">{</span>
+    <span class="nv">project</span> <span class="o">=</span> <span class="s2">&quot;acme-app&quot;</span>
+    <span class="nv">region</span>  <span class="o">=</span> <span class="s2">&quot;us-central1&quot;</span>
+    <span class="o">}</span>
+
+<span class="c1">#The google provider is assumed to be the provider for the resource type named google_compute_instance</span>
+</pre></div>
+</div>
+</li>
+<li><p>configuration arguments like project and region are evaluated in order</p></li>
+<li><p>2 meta-arguments available for provider blocks:</p>
+<ul class="simple">
+<li><p><code>version - to specify a version </code> and</p></li>
+<li><p><code>alias - to use same provider with different config for different resources</code></p></li>
+</ul>
+</li>
+<li><p>provider blocks are not required if not explicitly configured Tf uses an empty default config when a resource from the provider is added</p></li>
+</ul>
+</li>
+<li><p><strong>Initialization</strong></p>
+<ul class="simple">
+<li><p>when a new provider is added to configuration Tf has to initialize the provider before it can be used</p></li>
+<li><p><code>terraform init</code> downloads and initializes any providers</p></li>
+<li><p>only installs to current working directory, other directories can have other versions installed</p></li>
+</ul>
+</li>
+<li><p><strong>Versions</strong></p>
+<ul>
+<li><p>versions should be configured in production to avoid breaking changes</p></li>
+<li><p>the <code>required_providers</code> block should be used in the Tf block:</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>  terraform <span class="o">{</span>
+     required_providers <span class="o">{</span>
+     <span class="nv">aws</span> <span class="o">=</span> <span class="s2">&quot;~&gt; 1.0&quot;</span>
+          <span class="o">}</span>
+    <span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p>When terraform init is re-run with providers already installed, it will use an already-installed provider that meets the constraints in preference to downloading a new version</p></li>
+<li><p>to upgrade all modules run <code>terraform init -upgrade</code></p></li>
+</ul>
+</li>
+<li><p><strong>Multiple Provider Instances</strong></p>
+<ul>
+<li><p>we can have multiple configs for the same provider by using the alias meta-argument to allow for multiple regions per provider, targeting multiple Docker hosts, etc.</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span> <span class="c1"># The default provider configuration</span>
+   provider <span class="s2">&quot;aws&quot;</span> <span class="o">{</span>
+    <span class="nv">region</span> <span class="o">=</span> <span class="s2">&quot;us-east-1&quot;</span>
+   <span class="o">}</span>
+
+ <span class="c1"># Additional provider configuration for west coast region</span>
+   provider <span class="s2">&quot;aws&quot;</span> <span class="o">{</span>
+       <span class="nb">alias</span>  <span class="o">=</span> <span class="s2">&quot;west&quot;</span>
+       <span class="nv">region</span> <span class="o">=</span> <span class="s2">&quot;us-west-2&quot;</span>
+   <span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Third Party Plugins</strong></p>
+<ul class="simple">
+<li><p>anyone can develop and distribute 3rd party Tf provers</p></li>
+<li><p>need to be manually downloaded because they are not supported by terraform init</p></li>
+<li><p>download must go in the user plugin directory - Windows: %APPDATA%\terraform.d\plugins | Others: ~/.terraform.d/plugins</p></li>
+</ul>
+</li>
+<li><p><strong>Plugin Cache</strong></p>
+<ul>
+<li><p>terraform init downloads plugins into a subdirectory of the working directory so each working dir is self contained. This means with more than one configuration with the same provider has a separate copy of the plugin for each config</p></li>
+<li><p>plugins can be large so this isn’t performant - Tf allows for a shared local directory for plugin cache. This has to be manually created in the CLI Configuration File.</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span><span class="c1"># (Note that the CLI configuration file is _not_ the same as the .tf files</span>
+<span class="c1">#  used to configure infrastructure.)</span>
+
+ <span class="nv">plugin_cache_dir</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.terraform.d/plugin-cache&quot;</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</details>
+<details><summary>Terraform Settings</summary>
+<ul>
+<li><p><strong>Terraform Block Syntax</strong></p>
+<ul>
+<li><p>only constant values can be used</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span> terraform <span class="o">{</span>
+ <span class="c1"># ...</span>
+ <span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Configuring a Terraform Backend</strong></p>
+<ul>
+<li><p>this determines how state is stored, how operations are performed, remote back-ends for teams etc.</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>terraform <span class="o">{</span>
+    backend <span class="s2">&quot;s3&quot;</span> <span class="o">{</span>
+    <span class="c1"># (backend-specific settings...)</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p><strong>Specifying a Required Terraform Version</strong></p></li>
+<li><p><strong>Specifying Required Provider Versions</strong></p></li>
+<li><p><strong>Experimental Language Features</strong></p></li>
+</ul>
+</details>
+<hr class="docutils" />
+</details>
+<details><summary>Describe plug-in based architecture</summary>
+<ul class="simple">
+<li><p>Terraform is build on plug-in based architecture. Providers and provisioners used in configuration are plugins (AWS, Heroku). Anyone can create a new plugin. <span class="xref myst">Build Infrastructure– Initialization</span></p></li>
+</ul>
+</details>
+<details><summary>Demonstrate using multiple providers</summary>
+<ul class="simple">
+<li><p><span class="xref myst">Build Infrastructure– Providers</span></p></li>
+</ul>
+</details>
+</details>
+<details><summary>Describe how Terraform finds and fetches providers</summary>
+<ul class="simple">
+<li><p>Resource types are defined by providers</p></li>
+<li><p>Provider configuration is created with a provider block, the provider name is the name in the block header</p></li>
+<li><p>When a new provider is added Terraform has to initialize it before its used with the <code class="docutils literal notranslate"><span class="pre">terraform</span> <span class="pre">init</span></code> command. This downloads and installs the providers plugin</p></li>
+</ul>
+</details>
+<details><summary>Explain when to use and not use provisioners and when to use local-exec or remote-exec</summary>
+<ul class="simple">
+<li><p>Provisioners - provisioners are used to model specific actions on the local machine or on a remote machine to prepare infrastructure objects</p></li>
+<li><p>Provisioners are there if needed but they add complexity and uncertainty (should only be used as a last result)</p></li>
+<li><p>Provisioners should be used if no other option will work.</p></li>
+<li><p>Use cases:</p>
+<ul>
+<li><p>Passing data into virtual machines and other compute resources</p></li>
+<li><p>running config management software</p></li>
+</ul>
+</li>
+<li><p>local-exec - invokes a local executable after the resource is created. Invokes a process on the machine not on the resource.</p></li>
+<li><p>remote-exec - invokes a script on a remote resource after it is created.</p></li>
+</ul>
+</details>
+<hr class="docutils" />
+<p><span class="xref myst">⏮️</span> Objective 1 &amp; 2   ||   Objective 4 <span class="xref myst">⏩</span></p>
+<p><a class="reference internal" href="../README.html"><span class="doc std std-doc">🔙</span></a> README</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Hugo Tinoco.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
