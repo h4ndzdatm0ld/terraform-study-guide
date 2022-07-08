@@ -1,4 +1,4 @@
-<img align="center" src="docs/images/tf-logo.png">
+<img align="center" src="tf-logo.png">
 
 # Terraform Study Guide
 
@@ -6,19 +6,23 @@ Study Guide for the Terraform Associate Certification 2022
 
 > Note: The project was forked from @ari_hack - Thanks for the great work!
 
-![GitHub last commit](https://img.shields.io/github/last-commit/h4ndzdatm0ld/terraform-study-guide?style=plastic) ![GitHub](https://img.shields.io/github/license/h4ndzdatm0ld/terraform-study-guide?style=plastic) ![GitHub repo size](https://img.shields.io/github/repo-size/h4ndzdatm0ld/terraform-study-guide?style=plastic)
+<img align="left" src="https://img.shields.io/github/last-commit/h4ndzdatm0ld/terraform-study-guide/master?style=for-the-badge">
+
+<img align="center" src="https://img.shields.io/github/license/h4ndzdatm0ld/terraform-study-guide?style=for-the-badge">
+
+<img align="right" src="https://img.shields.io/github/repo-size/h4ndzdatm0ld/terraform-study-guide?style=for-the-badge">
 
 ## Objectives
 
-- [x] 1. [Understand Infrastructure as Code (IaC) concepts](./docs/objectives/objective-1-2/Iac.md)
-- [x] 2. [Understand Terraform's purpose (vs other IaC)](./docs/objectives/objective-1-2/Iac.md)
-- [x] 3. [Understand Terraform basics](./docs/objectives/objective-3/terraform-basics.md)
-- [x] 4. [Use the Terraform CLI (outside of core workflow)](./docs/objectives/objective-4/terraform-cli.md)
-- [x] 5. [Interact with Terraform modules](./docs/objectives/objective-5/modules.md)
-- [x] 6. [Navigate Terraform workflow](./docs/objectives/objective-6/workflow.md)
-- [x] 7. [Implement and maintain state](./docs/objectives/objective-7/manage-state.md)
-- [x] 8. [Read, generate, and modify the configuration](./docs/objectives/objective-8/hcl-features.md)
-- [x] 9. [Understand Terraform Cloud and Enterprise capabilities](./docs/objectives/objective-9/cloud-and-enterprise.md)
+- [x] 1. [Understand Infrastructure as Code (IaC) concepts](/Objective%201%20&%202/Iac.md)
+- [x] 2. [Understand Terraform's purpose (vs other IaC)](/Objective%201%20&%202/Iac.md)
+- [x] 3. [Understand Terraform basics](/Objective%203/terraform-basics.md)
+- [x] 4. [Use the Terraform CLI (outside of core workflow)](/Objective%204/terraform-cli.md)
+- [x] 5. [Interact with Terraform modules](/Objective%205/modules.md)
+- [x] 6. [Navigate Terraform workflow](/Objective%206/workflow.md)
+- [x] 7. [Implement and maintain state](/Objective%207/manage-state.md)
+- [x] 8. [Read, generate, and modify the configuration](/Objective%208/hcl-features.md)
+- [x] 9. [Understand Terraform Cloud and Enterprise capabilities](/Objective%209/cloud-and-enterprise.md)
 
 ## TODO
 
@@ -29,7 +33,7 @@ Study Guide for the Terraform Associate Certification 2022
 
 ## Additional Hashicorp Resources
 
-- The exam will be on Terraform 1.0 and higher.
+- The exam will be on Terraform 0.12.0 and higher.
 - [Exam Review](https://learn.hashicorp.com/terraform/certification/terraform-associate-review)
 - [Sample Questions](/Sample%20Questions%20/Question-Answer.md)
 - [Official Study Guide](https://learn.hashicorp.com/tutorials/terraform/associate-study)
@@ -43,7 +47,6 @@ Study Guide for the Terraform Associate Certification 2022
 - [General Terraform Best Practices](https://www.terraform-best-practices.com/)
 - [Terraform Cloud Interactive Learning](https://www.katacoda.com/courses/terraform)
 - [A Cloud Guru Terraform Cheatsheet](https://res.cloudinary.com/acloud-guru/image/fetch/c_thumb,f_auto,q_auto/https://acg-wordpress-content-production.s3.us-west-2.amazonaws.com/app/uploads/2020/11/terraform-cheatsheet-from-ACG.pdf)
-
 - Practice Exams
 
   - [Bryan Krausen - Practice Questions (Udemy)](https://www.udemy.com/course/terraform-associate-practice-exam/)
