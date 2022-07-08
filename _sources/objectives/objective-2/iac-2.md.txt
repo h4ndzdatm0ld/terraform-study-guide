@@ -13,18 +13,18 @@ The benefits of being provider-agnostic means there can be a single configuratio
 
 <details><summary>Explain the benefits of state</summary>
   
-- **Mapping to the Real World** 
-  - Terraform requires a database to map Tf(Terraform) config to the real world. 
-  ex. With state mapping Tf knows resource `resource "aws_instance" "foo"`  represents instance `i-abcd34233`. 
+- **Mapping to the Real World**
+  - Terraform requires a database to map Tf(Terraform) config to the real world.
+  ex. With state mapping Tf knows resource `resource "aws_instance" "foo"`  represents instance `i-abcd34233`.
 - **Metadata**
-  - Tf tracks metadata or resource dependencies 
-  - Tf keeps a copy of the most recent set of dependencies in state. So that correct order of operations can be executed even if an item is deleted from the configuration. 
+  - Tf tracks metadata or resource dependencies
+  - Tf keeps a copy of the most recent set of dependencies in state. So that correct order of operations can be executed even if an item is deleted from the configuration.
 - **Performance** 
-  - besides basic mapping Tf also keeps a cache of attribute values for all resources in the state. 
-  - most optional feature of state, only used to improve performance. 
-  - small infra: for plan and apply Tf syncs all resources in state 
+  - besides basic mapping Tf also keeps a cache of attribute values for all resources in the state.
+  - most optional feature of state, only used to improve performance.
+  - small infra: for plan and apply Tf syncs all resources in state
   - large infra: cache state is used because of API rate limits and querying all resources is too slow. Large infra also make use of `-refresh=false` and `-target` flags
-- **Syncing** 
+- **Syncing**
   - default syncing Tf stores state in a file in the current working directory
   - for teams remote state is used, remote locking is utilized to avoid multiple people running Tf at the same time.
 
@@ -51,6 +51,6 @@ At a high level, Terraform allows operators to use HCL to author files containin
 
 ---
 
-Objective 3 [⏩](../objective-3/terraform-basics.md)
+[⏮️](./../objective-3/iac.md) Objective 1 &nbsp; || &nbsp; Objective 3 [⏩](../objective-3/terraform-basics.md)
 
 [🔙](/README.md) README
