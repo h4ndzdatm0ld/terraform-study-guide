@@ -121,6 +121,6 @@ For a reference of all commands checkout out this file on [Terraform CLI](https:
 
 ---
 
-[⏮️](/Objective%205/modules.md) Objective 5 &nbsp; || &nbsp; Objective 7 [⏩](/Objective%207/manage-state.md)
+[⏮️](../objective-5/modules.md) Objective 5 &nbsp; || &nbsp; Objective 7 [⏩](../objective-7/manage-state.md)
 
 [🔙](/README.md) README

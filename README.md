@@ -4,7 +4,7 @@
 
 Study Guide for the Terraform Associate Certification 2022
 
-> Note: The project was forked from @ari_hack - Thanks for the great work!
+> Note: The project was originally forked from @ari_hack - Thanks for the great work!
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/h4ndzdatm0ld/terraform-study-guide?style=plastic) ![GitHub](https://img.shields.io/github/license/h4ndzdatm0ld/terraform-study-guide?style=plastic) ![GitHub repo size](https://img.shields.io/github/repo-size/h4ndzdatm0ld/terraform-study-guide?style=plastic)
 
@@ -20,34 +20,27 @@ Study Guide for the Terraform Associate Certification 2022
 - [x] 8. [Read, generate, and modify the configuration](./docs/objectives/objective-8/hcl-features.md)
 - [x] 9. [Understand Terraform Cloud and Enterprise capabilities](./docs/objectives/objective-9/cloud-and-enterprise.md)
 
-## TODO
-
-- [ ] Review and format
-- [ ] Add HCL examples
-
 ---
 
 ## Additional Hashicorp Resources
 
 - The exam will be on Terraform 1.0 and higher.
 - [Exam Review](https://learn.hashicorp.com/terraform/certification/terraform-associate-review)
-- [Sample Questions](/Sample%20Questions%20/Question-Answer.md)
 - [Official Study Guide](https://learn.hashicorp.com/tutorials/terraform/associate-study)
 - [Lab Tutorials](https://learn.hashicorp.com/tutorials/terraform/infrastructure-as-code?in=terraform/aws-get-started)
-- [Terraform Registry - find modules for deploying common infra](https://registry.terraform.io/)
-- [Terraform feature pdf](/tf-feature-table.pdf) or [View on the webiste](https://www.hashicorp.com/products/terraform/pricing/)
+- [Terraform Registry - Browse Providers | Modules](https://registry.terraform.io/)
+- [Terraform Tutorials](https://learn.hashicorp.com/terraform?utm_source=terraform_io)
 
 ## Additional External Resources
 
-- 🌟 Anki Flashcards [Download](/anki/) or [Web link](https://ankiweb.net/shared/info/180398604) 🌟
+- [🌟 Anki Flashcards](https://ankiweb.net/shared/info/180398604) 🌟
 - [General Terraform Best Practices](https://www.terraform-best-practices.com/)
 - [Terraform Cloud Interactive Learning](https://www.katacoda.com/courses/terraform)
 - [A Cloud Guru Terraform Cheatsheet](https://res.cloudinary.com/acloud-guru/image/fetch/c_thumb,f_auto,q_auto/https://acg-wordpress-content-production.s3.us-west-2.amazonaws.com/app/uploads/2020/11/terraform-cheatsheet-from-ACG.pdf)
 
 - Practice Exams
 
-  - [Bryan Krausen - Practice Questions (Udemy)](https://www.udemy.com/course/terraform-associate-practice-exam/)
-  - [Medium](https://medium.com/bb-tutorials-and-thoughts/250-practice-questions-for-terraform-associate-certification-7a3ccebe6a1a)
-  - [Youtube overview of the exam and practice questions](https://www.youtube.com/watch?v=vhZEdqlXlSs&list=PL5VXZTK6spA2HF5Kf0rI9RDRHF9Hopffr)
+  - [Bryan Krausen (Paid) - Practice Questions (Udemy)](https://www.udemy.com/course/terraform-associate-practice-exam/)
+  - [Medium (Free)](https://medium.com/bb-tutorials-and-thoughts/250-practice-questions-for-terraform-associate-certification-7a3ccebe6a1a)
 
-  NOTE: Most of this information comes directly from the [Hashicorp website](https://learn.hashicorp.com/terraform/certification/terraform-associate-study-guide) I've compiled the resources here for accessibility and easy review. 🙂 If you find this study guide useful please give it a 🌟 and check back for updates!
+  > NOTE: Most of this information comes directly from the [Hashicorp website](https://learn.hashicorp.com/terraform/certification/terraform-associate-study-guide) I've compiled the resources here for accessibility and easy review. 🙂 If you find this study guide useful please give it a 🌟 and check back for updates!

@@ -59,8 +59,3 @@ source_suffix = {
     ".txt": "markdown",
     ".md": "markdown",
 }
-
-# # Copy README every time we build
-# src = "../README.md"
-# dst = "./README.md"
-# copyfile(src, dst)
