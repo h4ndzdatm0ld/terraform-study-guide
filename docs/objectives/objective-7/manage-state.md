@@ -139,6 +139,6 @@ Partial Configuration
 
 ---
 
-[⏮️](../objective-6/workflow.md) Objective 6 &nbsp; || &nbsp; Objective 8 [⏩](../objective-8/hcl-features.md))
+[⏮️](../objective-6/workflow.md) Objective 6 &nbsp; || &nbsp; Objective 8 [⏩](../objective-8/hcl-features.md)
 
 [🔙](/README.md) README
