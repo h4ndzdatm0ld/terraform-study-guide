@@ -5,6 +5,11 @@
 Welcome to the Terraform Study Guide!
 ==========================================
 
+.. image:: ./images/tf-logo.png
+   :alt: Terraform Logo
+   :width: 400
+   :alt: Alternative text
+
 Overview
 ========
 

@@ -10,15 +10,15 @@ Study Guide for the Terraform Associate Certification 2022
 
 ## Objectives
 
-- [x] 1. [Understand Infrastructure as Code (IaC) concepts](/Objective%201%20&%202/Iac.md)
-- [x] 2. [Understand Terraform's purpose (vs other IaC)](/Objective%201%20&%202/Iac.md)
-- [x] 3. [Understand Terraform basics](/Objective%203/terraform-basics.md)
-- [x] 4. [Use the Terraform CLI (outside of core workflow)](/Objective%204/terraform-cli.md)
-- [x] 5. [Interact with Terraform modules](/Objective%205/modules.md)
-- [x] 6. [Navigate Terraform workflow](/Objective%206/workflow.md)
-- [x] 7. [Implement and maintain state](/Objective%207/manage-state.md)
-- [x] 8. [Read, generate, and modify the configuration](/Objective%208/hcl-features.md)
-- [x] 9. [Understand Terraform Cloud and Enterprise capabilities](/Objective%209/cloud-and-enterprise.md)
+- [x] 1. [Understand Infrastructure as Code (IaC) concepts](./docs/objectives/objective-1-2/Iac.md)
+- [x] 2. [Understand Terraform's purpose (vs other IaC)](./docs/objectives/objective-1-2/Iac.md)
+- [x] 3. [Understand Terraform basics](./docs/objectives/objective-3/terraform-basics.md)
+- [x] 4. [Use the Terraform CLI (outside of core workflow)](./docs/objectives/objective-4/terraform-cli.md)
+- [x] 5. [Interact with Terraform modules](./docs/objectives/objective-5/modules.md)
+- [x] 6. [Navigate Terraform workflow](./docs/objectives/objective-6/workflow.md)
+- [x] 7. [Implement and maintain state](./docs/objectives/objective-7/manage-state.md)
+- [x] 8. [Read, generate, and modify the configuration](./docs/objectives/objective-8/hcl-features.md)
+- [x] 9. [Understand Terraform Cloud and Enterprise capabilities](./docs/objectives/objective-9/cloud-and-enterprise.md)
 
 ## TODO
 
