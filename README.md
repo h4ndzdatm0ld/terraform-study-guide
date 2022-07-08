@@ -1,4 +1,4 @@
-<img align="center" src="tf-logo.png">
+<img align="center" src="docs/images/tf-logo.png">
 
 # Terraform Study Guide
 
@@ -6,11 +6,7 @@ Study Guide for the Terraform Associate Certification 2022
 
 > Note: The project was forked from @ari_hack - Thanks for the great work!
 
-<img align="left" src="https://img.shields.io/github/last-commit/h4ndzdatm0ld/terraform-study-guide/master?style=for-the-badge">
-
-<img align="center" src="https://img.shields.io/github/license/h4ndzdatm0ld/terraform-study-guide?style=for-the-badge">
-
-<img align="right" src="https://img.shields.io/github/repo-size/h4ndzdatm0ld/terraform-study-guide?style=for-the-badge">
+<img align="left" src="https://img.shields.io/github/last-commit/h4ndzdatm0ld/terraform-study-guide/main?style=for-the-badge"><img align="center" src="https://img.shields.io/github/license/h4ndzdatm0ld/terraform-study-guide?style=for-the-badge"><img align="right" src="https://img.shields.io/github/repo-size/h4ndzdatm0ld/terraform-study-guide?style=for-the-badge">
 
 ## Objectives
 
@@ -33,7 +29,7 @@ Study Guide for the Terraform Associate Certification 2022
 
 ## Additional Hashicorp Resources
 
-- The exam will be on Terraform 0.12.0 and higher.
+- The exam will be on Terraform 1.0 and higher.
 - [Exam Review](https://learn.hashicorp.com/terraform/certification/terraform-associate-review)
 - [Sample Questions](/Sample%20Questions%20/Question-Answer.md)
 - [Official Study Guide](https://learn.hashicorp.com/tutorials/terraform/associate-study)
@@ -47,6 +43,7 @@ Study Guide for the Terraform Associate Certification 2022
 - [General Terraform Best Practices](https://www.terraform-best-practices.com/)
 - [Terraform Cloud Interactive Learning](https://www.katacoda.com/courses/terraform)
 - [A Cloud Guru Terraform Cheatsheet](https://res.cloudinary.com/acloud-guru/image/fetch/c_thumb,f_auto,q_auto/https://acg-wordpress-content-production.s3.us-west-2.amazonaws.com/app/uploads/2020/11/terraform-cheatsheet-from-ACG.pdf)
+
 - Practice Exams
 
   - [Bryan Krausen - Practice Questions (Udemy)](https://www.udemy.com/course/terraform-associate-practice-exam/)
