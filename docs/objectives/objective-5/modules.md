@@ -1,4 +1,4 @@
-## Objective 5: Interact with Terraform modules
+# Objective 5: Interact with Terraform modules
 
 <details><summary>Contrast module source options</summary>
 <p>
@@ -136,6 +136,6 @@
 
 ---
 
-[⏮️](/Objective%204/terraform-cli.md) Objective 4 &nbsp; || &nbsp; Objective 6 [⏩](/Objective%206/workflow.md)
+[⏮️](../objective-4/terraform-cli.md) Objective 4 &nbsp; || &nbsp; Objective 6 [⏩](../objective-6/workflow.md)
 
 [🔙](/README.md) README

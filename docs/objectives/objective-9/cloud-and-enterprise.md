@@ -1,4 +1,4 @@
-## Objective 9: Understand Terraform Cloud and Enterprise capabilities
+# Objective 9: Understand Terraform Cloud and Enterprise capabilities
 
 <details><summary>Describe the benefits of Sentinel, registry, and workspaces</summary>
 <p>
@@ -51,8 +51,8 @@
 - **Terraform Cloud**
   - [Terraform Cloud Pricing/Features](https://www.hashicorp.com/products/terraform/pricing/)
   - [Terraform Cloud Docs](https://www.terraform.io/docs/cloud/index.html)
-  - Main Features - Workflow - CLI, Remote Execution(Operations), Support for Local Execution, Organize infra with workspaces, Remote state management, data sharing, and run triggers, version control integration, private module registry  
-   - Integrations - Full API, Notifications - Access Control and Governance - team based permission systems, sentinel policies, cost estimation
+  - Main Features - Workflow - CLI, Remote Execution(Operations), Support for Local Execution, Organize infra with workspaces, Remote state management, data sharing, and run triggers, version control integration, private module registry
+  - Integrations - Full API, Notifications - Access Control and Governance - team based permission systems, sentinel policies, cost estimation
   </p>
 
 </details>

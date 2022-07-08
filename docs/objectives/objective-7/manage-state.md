@@ -1,4 +1,4 @@
-## Objective 7: Implement and maintain state
+# Objective 7: Implement and maintain state
 
 <details><summary>Describe default local backend</summary>
 <p>
@@ -139,6 +139,6 @@ Partial Configuration
 
 ---
 
-[⏮️](/Objective%206/workflow.md) Objective 6 &nbsp; || &nbsp; Objective 8 [⏩](/Objective%208/hcl-features.md)
+[⏮️](../objective-6/workflow.md) Objective 6 &nbsp; || &nbsp; Objective 8 [⏩](../objective-8/hcl-features.md)
 
 [🔙](/README.md) README

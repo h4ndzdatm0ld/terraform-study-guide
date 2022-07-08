@@ -1,4 +1,4 @@
-## Objective 8: Read, generate, and modify configuration
+# Objective 8: Read, generate, and modify configuration
 
 <details><summary>Demonstrate use of variables and outputs</summary>
 <p>
@@ -169,6 +169,6 @@ Dynamic Blocks
 
 ---
 
-[⏮️](/Objective%207/manage-state.md) Objective 7 &nbsp; || &nbsp; Objective 9 [⏩](/Objective%209/cloud-and-enterprise.md)
+[⏮️](../objective-7/manage-state.md) Objective 7 &nbsp; || &nbsp; Objective 9 [⏩](../objective-9/cloud-and-enterprise.md)
 
 [🔙](/README.md) README

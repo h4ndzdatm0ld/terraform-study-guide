@@ -1,4 +1,4 @@
-## Objective 3: Understand Terraform basics
+# Objective 3: Understand Terraform basics
 
 <details><summary>	Handle Terraform and provider installation and versioning</summary>
 
@@ -150,6 +150,6 @@
 
 ---
 
-[⏮️](/Objective%201%20&%202/Iac.md) Objective 1 & 2 &nbsp; || &nbsp; Objective 4 [⏩](/Objective%204/terraform-cli.md)
+[⏮️](./../objective-2/iac-2.md) Objective 2 &nbsp; || &nbsp; Objective 4 [⏩](./../objective-4/terraform-cli.md)
 
 [🔙](/README.md) README

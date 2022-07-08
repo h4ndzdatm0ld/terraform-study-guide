@@ -1,4 +1,4 @@
-## Objective 6: Navigate Terraform workflow
+# Objective 6: Navigate Terraform workflow
 
 <details><summary>Describe Terraform workflow ( Write -> Plan -> Create )</summary>
 <p>
@@ -60,7 +60,7 @@
 
 #### The next section will go over Terraform Commands
 
-For a reference of all commands checkout out this file on [Terraform CLI](https://github.com/ari-hacks/command-line-cheat-sheet/blob/master/terraform.sh)
+For a reference of all commands checkout out this file on [Terraform CLI](https://github.com/h4ndzdatm0ld/command-line-cheat-sheet/blob/master/terraform.sh)
 
 <details><summary>Initialize a Terraform working directory (terraform init)</summary>
 <p>
@@ -121,6 +121,6 @@ For a reference of all commands checkout out this file on [Terraform CLI](https:
 
 ---
 
-[⏮️](/Objective%205/modules.md) Objective 5 &nbsp; || &nbsp; Objective 7 [⏩](/Objective%207/manage-state.md)
+[⏮️](../objective-5/modules.md) Objective 5 &nbsp; || &nbsp; Objective 7 [⏩](../objective-7/manage-state.md)
 
 [🔙](/README.md) README
