@@ -1,13 +1,17 @@
-## Sample Questions 
+## Sample Questions
+
 ### Question 1
+
 <details><summary>Usernames and passwords referenced in the Terraform code, even as variables, will end up in plain text in the state file.</summary>
 <p>
 
 #### Answer: True
+
 </p>
 </details>
 
 ### Question 2
+
 <details><summary>
 Consider the following Terraform 0.12 configuration snippet:
 
@@ -27,6 +31,7 @@ resource "aws_vpc" "shared" {
 }
 
 ```
+
 How would we define the `cidr_block` for us-east-1 in the `aws_vpc` resource using a variable?
 
 </summary>
@@ -82,11 +87,11 @@ What happens when we apply Terraform configuration? Choose <b>TWO</b> correct an
 Which flag is used to find more information about a Terraform command? For example, you need additional information about how to use the <code> plan</code> command. You would type: <code> terraform plan</code> _____. Type your answer in the field provided. The text field is not case-sensitive and all variations of the correct answer are accepted.
 </summary>
 
-- [x]  -h
-- [x]  -help
-- [x]  --help
+- [x] -h
+- [x] -help
+- [x] --help
 </details>
 
--------------------------------
+---
 
 Return to [README.md](/README.md)
