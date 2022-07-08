@@ -1,4 +1,4 @@
-## Objective 7: Implement and maintain state
+# Objective 7: Implement and maintain state
 
 <details><summary>Describe default local backend</summary>
 <p>

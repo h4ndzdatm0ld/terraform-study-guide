@@ -1,4 +1,4 @@
-## Objective 3: Understand Terraform basics
+# Objective 3: Understand Terraform basics
 
 <details><summary>	Handle Terraform and provider installation and versioning</summary>
 

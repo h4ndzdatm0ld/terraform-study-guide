@@ -15,7 +15,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-from shutil import copyfile
+# from shutil import copyfile
 
 # -- Project information -----------------------------------------------------
 
@@ -60,7 +60,7 @@ source_suffix = {
     ".md": "markdown",
 }
 
-# Copy README every time we build
-src = "../README.md"
-dst = "./README.md"
-copyfile(src, dst)
+# # Copy README every time we build
+# src = "../README.md"
+# dst = "./README.md"
+# copyfile(src, dst)

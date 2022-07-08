@@ -5,6 +5,9 @@
 Welcome to the Terraform Study Guide!
 ==========================================
 
+.. image:: images/tf-logo.png
+   :alt: Terraform Logo
+
 Overview
 ========
 
@@ -17,14 +20,13 @@ Contents
    :maxdepth: 4
 
    Home <self>
-   Readme <README>
 
-Additional
+Objectives
 ========
 
 .. toctree::
    :glob:
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
    :includehidden:
 

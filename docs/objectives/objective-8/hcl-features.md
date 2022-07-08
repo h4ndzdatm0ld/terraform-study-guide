@@ -1,4 +1,4 @@
-## Objective 8: Read, generate, and modify configuration
+# Objective 8: Read, generate, and modify configuration
 
 <details><summary>Demonstrate use of variables and outputs</summary>
 <p>

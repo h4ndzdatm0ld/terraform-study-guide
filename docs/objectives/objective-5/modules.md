@@ -1,4 +1,4 @@
-## Objective 5: Interact with Terraform modules
+# Objective 5: Interact with Terraform modules
 
 <details><summary>Contrast module source options</summary>
 <p>
