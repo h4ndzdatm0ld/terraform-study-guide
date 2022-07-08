@@ -60,7 +60,7 @@
 
 #### The next section will go over Terraform Commands
 
-For a reference of all commands checkout out this file on [Terraform CLI](https://github.com/ari-hacks/command-line-cheat-sheet/blob/master/terraform.sh)
+For a reference of all commands checkout out this file on [Terraform CLI](https://github.com/h4ndzdatm0ld/command-line-cheat-sheet/blob/master/terraform.sh)
 
 <details><summary>Initialize a Terraform working directory (terraform init)</summary>
 <p>

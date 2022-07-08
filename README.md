@@ -6,11 +6,11 @@ Study Guide for the Terraform Associate Certification 2022
 
 > Note: The project was forked from @ari_hack - Thanks for the great work!
 
-<img align="left" src="https://img.shields.io/github/last-commit/ari-hacks/terraform-study-guide/master?style=for-the-badge">
+<img align="left" src="https://img.shields.io/github/last-commit/h4ndzdatm0ld/terraform-study-guide/master?style=for-the-badge">
 
-<img align="center" src="https://img.shields.io/github/license/ari-hacks/terraform-study-guide?style=for-the-badge">
+<img align="center" src="https://img.shields.io/github/license/h4ndzdatm0ld/terraform-study-guide?style=for-the-badge">
 
-<img align="right" src="https://img.shields.io/github/repo-size/ari-hacks/terraform-study-guide?style=for-the-badge">
+<img align="right" src="https://img.shields.io/github/repo-size/h4ndzdatm0ld/terraform-study-guide?style=for-the-badge">
 
 ## Objectives
 

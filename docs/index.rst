@@ -19,7 +19,7 @@ Contents
    Home <self>
    Readme <README>
 
-Additional
+Objectives
 ========
 
 .. toctree::
