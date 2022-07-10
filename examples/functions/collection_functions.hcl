@@ -100,20 +100,55 @@ distinct(["a", "b", "a", "c", "d", "b"]) #first occurrence of the value is keps 
   "d",
 ]
 
-#element retrieves a single element from a list.
+#element retrieves a single element from a list by the given index value.
+element(["a", "b", "c"], 1)
+b
+
+#flatten, combines a list of lists into a single list.
+flatten([[["a", "b"], []], ["c"]])
+["a", "b", "c"]
+
+#index - Much like `element` but backwards. Instead of getting the value of the element at a given index,
+# it returns the index of the element.
+index(["a", "b", "c"], "b")
+1
+
+# Value / must exist
+
+index(["a", "b", "c"], "C")
+╷
+│ Error: Error in function call
+│
+│   on <console-input> line 1:
+│   (source code not available)
+│
+│ Call to function "index" failed: item not found.
+╵
+
+#keys, much like .keys() for dictionaries in Python - only the keys are returned from a map (dict).
+keys({a=1, c=2, d=3})
+[
+  "a",
+  "c",
+  "d",
+]
 
 
-#flatten 
+#length of a given list, map or string.
+length([])
+0
+length(["a", "b"])
+2
+length({"a" = "b"})
+1
+length("hello")
+5
 
-#index
-
-#keys
-
-#length
-
-#list
-
-#lookup 
+#lookup - Think of this as a safe get() function. If the key is not found, it returns the default value.
+lookup({a="ay", b="bee"}, "a", "what?")
+ay
+lookup({a="ay", b="bee"}, "c", "what?")
+what?
 
 #map 
 
